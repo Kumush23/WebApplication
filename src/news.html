@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body>
+  
+<div class="bg-gray-100">
+<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto my-0">
+      <img src="../src/assets/logo.png" class="h-16 my-2" alt="Eduway Logo">
+  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" class="text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center dark:[#F7BE38]/90 dark:hover:[#F7BE38]/90 dark:focus:ring-grey-800">Оставить отзыв</button>
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  </div>
+  <div class="items-center justify-between hidden p-4 w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    <ul class="flex flex-col md:p-0 gap-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <li class="m-0">
+        <a href="./kgindex.html" class="block  border border-gray-200 py-1 px-5 font-medium text-sm text-gray-500 rounded-full  hover:bg-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 focus:outline-none  md:hover:bg-grey md:hover:text-white md:dark:hover:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Детские сады</a>
+      </li>
+      <li class="m-0">
+        <a href="#" class="block  border border-gray-200 py-1 px-5 font-medium text-sm text-gray-500 rounded-full  hover:bg-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 focus:outline-none  md:hover:bg-grey md:hover:text-white md:dark:hover:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Школы</a>
+      </li>
+      <li class="m-0">
+        <a href="#" class="block  border border-gray-200 py-1 px-5 font-medium text-sm text-gray-500 rounded-full  hover:bg-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 focus:outline-none  md:hover:bg-grey md:hover:text-white md:dark:hover:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Университеты</a>
+      </li>
+      <li class="m-0">
+        <a href="./news.html" class="block bg-gray-200  border border-gray-200 py-1 px-5 font-medium text-sm text-gray-500 rounded-full  hover:bg-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 focus:outline-none  md:hover:bg-grey md:hover:text-white md:dark:hover:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Новости</a>
+      </li>
+      <li class="m-0">
+        <a href="./index.html" class="block  border border-gray-200 py-1 px-5 font-medium text-sm text-gray-500 rounded-full hover:bg-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 focus:outline-none  md:hover:bg-grey md:hover:text-white md:dark:hover:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">О Нас</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
+<div class="mb-6">
+    <video class="w-full h-auto max-w-full" controls>
+      <source src="/docs/videos/flowbite.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div>
+
+<div  x-data="{ filter: 'all' }" class="mb-1 flex justify-center rounded-lg shadow-xs" role="group">
+    <button @click="filter = 'all'" 
+    :class="filter === 'all' ? 'bg-gray-300 text-black'" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200  rounded-l-lg hover:bg-gray-100 focus:ring-2   focus:z-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+       все
+      </button>
+    <button @click="filter = 'kindergarten'"
+    :class="filter === 'kindergarten' ? : 'bg-gray-300 text-black'" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+      Детские сады
+    </button>
+    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+      Школы
+    </button>
+    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+      Университеты
+    </button>
+  </div>
+  
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-full mx-6  p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div x-show="filter === 'all' || filter === 'general'"  class="mb-6">
+        <img class="h-auto md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p>
+    </div>
+    <div x-show="filter === 'all' || filter === 'general'" >
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p >       
+    </div>
+    <div x-show="filter === 'all' || filter === 'general'" >
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
+    </div>
+    <div x-show="filter === 'all' || filter === 'kindergarten'" class="mb-6">
+        <img class="h-auto md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p>
+    </div>
+    <div x-show="filter === 'all' || filter === 'kindergarten'">
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p >       
+    </div>
+    <div x-show="filter === 'all' || filter === 'kindergarten'">
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
+    </div>
+    </div>
+</div>
+
+
+
+<footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 mt-4">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="./index.html" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+          <img src="./assets/logo.png" class="h-16" alt="Eduway Logo" />
+      </a>
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+              <li>
+                  <a href="./kgindex.html" class="hover:underline me-4 md:me-6">Детские сады</a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6">Школы</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Университеты</a>
+            </li>
+              <li>
+                  <a href="./news.html" class="hover:underline me-4 md:me-6">Новости</a>
+              </li>
+              <li>
+                  <a href="./index.html" class="hover:underline">О Нас</a>
+              </li>
+          </ul>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="" class="hover:underline">Eduway</a>. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
