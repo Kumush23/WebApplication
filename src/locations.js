@@ -45,31 +45,15 @@ class Location {
           <button data-modal-target="application-modal" data-modal-toggle="application-modal" class="w-full bg-[#F7BE38] hover:bg-[#F7BE38]/90 text-white font-bold py-2 px-4 rounded-full">
                 Оставить заявку
           </button>  
-            <div id="application-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900 bg-opacity-50 flex items-center justify-center">
-  <div class="relative bg-white rounded-lg shadow w-full max-w-md">
-    <div class="p-6">
-      <h2 class="text-xl font-semibold mb-4">Оставить заявку</h2>
-      <form>
-        <label class="block mb-2 text-sm">Имя родителя</label>
-        <input type="text" class="w-full p-2 border rounded-lg mb-4" placeholder="Введите ваше имя">
-
-        <label class="block mb-2 text-sm">Номер телефона</label>
-        <input type="tel" class="w-full p-2 border rounded-lg mb-4" placeholder="+998 XX XXX XX XX">
-
-        <label class="block mb-2 text-sm">Возраст ребенка</label>
-        <input type="number" class="w-full p-2 border rounded-lg mb-4" placeholder="Возраст в годах">
-
-        <label class="block mb-2 text-sm">Комментарий</label>
-        <textarea class="w-full p-2 border rounded-lg mb-4" placeholder="Дополнительная информация"></textarea>
-
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg">Отправить заявку</button>
-      </form>
-      <button data-modal-hide="application-modal" class="absolute top-4 right-4 text-gray-500 text-2xl">&times;</button>
-    </div>
-  </div>
-</div>
-
+      
  </div>
     `;
+  }
+
+  onClickApplication(callback) {
+    const button = document.querySelector(
+      '[data-modal-target="application-modal"]'
+    );
+    button.addEventListener("click", callback);
   }
 }
