@@ -13,7 +13,7 @@ class Location {
   render() {
     return `
  <div class="popup-info p-4">
-  <img class="mb-4 rounded-lg" src="${this.photo} alt="" />
+  <img class="mb-4 rounded-lg" src="${this.photo}" alt="" />
             <h3 class="text-xl font-bold text-gray-800 mb-2">${this.name}</h3>           
             <div class="flex items-center mb-3">
             <div class="flex items">
@@ -42,9 +42,9 @@ class Location {
                 </div>
             </div>
 
-            <button data-modal-target="application-modal" data-modal-toggle="application-modal" class="w-full bg-[#F7BE38] hover:bg-[#F7BE38]/90 text-white font-bold py-2 px-4 rounded-full">
+          <button data-modal-target="application-modal" data-modal-toggle="application-modal" class="w-full bg-[#F7BE38] hover:bg-[#F7BE38]/90 text-white font-bold py-2 px-4 rounded-full">
                 Оставить заявку
-            </button>  
+          </button>  
             <div id="application-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900 bg-opacity-50 flex items-center justify-center">
   <div class="relative bg-white rounded-lg shadow w-full max-w-md">
     <div class="p-6">
