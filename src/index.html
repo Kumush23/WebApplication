@@ -119,6 +119,7 @@
             type="text"
             class="w-full p-2 border rounded-lg mb-4"
             placeholder="Введите имя"
+            required
           />
 
           <label class="block mb-2 text-sm">Email</label>
@@ -126,6 +127,7 @@
             type="email"
             class="w-full p-2 border rounded-lg mb-4"
             placeholder="Введите email"
+            required
           />
 
           <label class="block mb-2 text-sm">Сообщение</label>
@@ -165,28 +167,23 @@
         </button>
       </div>
     </div>
-    <div class="mb-6 mt-32">
-      <video class="w-full h-auto max-w-full" controls>
-        <source src="/docs/videos/flowbite.mp4" type="video/mp4" />
+    <div class="relative w-full mt-24">
+      <div class="absolute inset-x-0 text-white p-4 z-10 w-full" style="margin-top: 80px;">
+        <h1 class="text-4xl font-extrabold leading-none tracking-tight text-white md:text-xl lg:text-6xl mt-10">Крупнейшая сеть поиск</br>детских садов, школ</br> и университитов</h1>
+    </div>
+      <video class="w-full h-auto" muted autoplay loop>
+        <source src="./assets/aboutUs.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
 
     <div
-      class="max-w-full mx-6 mt-80 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      class="max-w-full mx-6 mt-4 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
     >
-      <h1
-        class="mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white"
-      >
-        We invest in the world’s potential
-      </h1>
-      <p class="mb-3 text-gray-500 dark:text-gray-400">
-        Track work across the enterprise through an open, collaborative
-        platform. Link issues across Jira and ingest data from other software
-        development tools, so your IT support and operations teams have richer
-        contextual information to rapidly respond to requests, incidents, and
-        changes.
-      </p>
+    <h1 class="mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Eduway</h1>
+    <p class="mb-3 text-gray-500 dark:text-gray-400">
+      Наша миссия – предоставить (порекомендовать) качественное образование, основанное на индивидуальном подходе, инновационных методиках и заботе о каждом ученике.
+      Мы уверены, что в нашей сети каждый найдет свое место и получит качественное образование, которое станет надежным фундаментом для его будущего успеха.</p>
     </div>
 
     <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 mt-4">
@@ -207,10 +204,10 @@
               >
             </li>
             <li>
-              <a href="#" class="hover:underline me-4 md:me-6">Школы</a>
+              <a href="./school.html" class="hover:underline me-4 md:me-6">Школы</a>
             </li>
             <li>
-              <a href="#" class="hover:underline me-4 md:me-6">Университеты</a>
+              <a href="./university.html" class="hover:underline me-4 md:me-6">Университеты</a>
             </li>
             <li>
               <a href="./news.html" class="hover:underline me-4 md:me-6"

@@ -8,13 +8,22 @@
   <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body>
+<body class="bg-gray-100">
   
-<div class="bg-gray-100">
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto my-0">
             <img src="../src/assets/logo.png" class="h-16 my-2" alt="Eduway Logo">
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button
+            data-drawer-target="drawer-right-example"
+            data-drawer-show="drawer-right-example"
+            data-drawer-placement="right"
+            aria-controls="drawer-right-example"
+            type="button"
+            class="text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-[#F7BE38]/50"
+          >
+            Контакт
+          </button>
             <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 17">
@@ -43,7 +52,71 @@
         </div>
         </div>
     </nav>  
-      
+    <div
+    id="drawer-right-example"
+    class="fixed top-0 right-0 z-50 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300"
+    tabindex="-1"
+    aria-labelledby="drawer-right-label"
+  >
+    <div class="p-4">
+      <h2 id="drawer-right-label" class="text-xl font-semibold mb-4">
+        Свяжитесь с нами
+      </h2>
+
+      <form>
+        <label class="block mb-2 text-sm">Имя</label>
+        <input
+          type="text"
+          class="w-full p-2 border rounded-lg mb-4"
+          placeholder="Введите имя"
+          required
+        />
+
+        <label class="block mb-2 text-sm">Email</label>
+        <input
+          type="email"
+          class="w-full p-2 border rounded-lg mb-4"
+          placeholder="Введите email"
+          required
+        />
+
+        <label class="block mb-2 text-sm">Сообщение</label>
+        <textarea
+          class="w-full p-2 border rounded-lg mb-4"
+          placeholder="Введите сообщение"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded-lg"
+        >
+          Отправить
+        </button>
+      </form>
+      <button
+        data-drawer-hide="drawer-right-example"
+        aria-controls="drawer-right-example"
+        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <svg
+          class="w-3 h-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+    </div>
+  </div>
       <div class="relative w-full">
        <img class="h-auto max-w-full" src="./assets/banner.jpg" alt="image">
       <div class="absolute inset-x-0 bottom-0 top-0 left-0 w-full h-full flex items-center justify-center">
@@ -52,57 +125,142 @@
     </div>
     
 
-<div class="mt-4">
-<div  x-data="{ filter: 'all' }" class="mb-1 flex justify-center rounded-lg shadow-xs" role="group">
-    <button @click="filter = 'all'" 
-    :class="filter === 'all' ? 'bg-gray-300 text-black'" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200  rounded-l-lg hover:bg-gray-100 focus:ring-2   focus:z-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+<div id="btnContainer" class="mt-4 mb-1 flex justify-center rounded-lg shadow-xs" role="group">
+    <button onclick="filterSelection('all')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200  rounded-l-lg hover:bg-gray-100 focus:ring-2   focus:z-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
        все
       </button>
-    <button @click="filter = 'kindergarten'"
-    :class="filter === 'kindergarten' ? : 'bg-gray-300 text-black'" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button onclick="filterSelection('kindergardens')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Детские сады
     </button>
-    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button onclick="filterSelection('schools')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Школы
     </button>
-    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button onclick="filterSelection('universities')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Университеты
     </button>
 </div>
-  
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-full mx-6  p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <div x-show="filter === 'all' || filter === 'general'"  class="mb-6">
-        <img class="h-auto md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p>
+<div class="mx-6 grid grid-cols-1 gap-3 mb-6 md:grid-cols-3">
+    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+        </p>
+        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+            Читать полностью
+          </button>
+          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                    <!-- Modal header -->
+                <div class="flex">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>   
+                <!-- Modal body -->
+                <div class="p-4 md:p-5 space-y-4">
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                        </p>
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
+    
+                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
+                            
+                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
+                            
+                            Ходим почти два года, все нравится. Спасибо коллективу сада!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div x-show="filter === 'all' || filter === 'general'" >
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p >       
+    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+        </p>
+        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+            Читать полностью
+          </button>
+          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                    <!-- Modal header -->
+                <div class="flex">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>   
+                <!-- Modal body -->
+                <div class="p-4 md:p-5 space-y-4">
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                        </p>
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
+    
+                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
+                            
+                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
+                            
+                            Ходим почти два года, все нравится. Спасибо коллективу сада!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div x-show="filter === 'all' || filter === 'general'" >
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
+    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+        </p>
+        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+            Читать полностью
+          </button>
+          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                    <!-- Modal header -->
+                <div class="flex">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>   
+                <!-- Modal body -->
+                <div class="p-4 md:p-5 space-y-4">
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                        </p>
+                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
+    
+                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
+                            
+                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
+                            
+                            Ходим почти два года, все нравится. Спасибо коллективу сада!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div x-show="filter === 'all' || filter === 'kindergarten'" class="mb-6">
-        <img class="h-auto md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p>
     </div>
-    <div x-show="filter === 'all' || filter === 'kindergarten'">
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p >       
-    </div>
-    <div x-show="filter === 'all' || filter === 'kindergarten'">
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
-    </div>
-    </div>
-</div>
 <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 mt-4">
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
@@ -114,10 +272,10 @@
                   <a href="./kgindex.html" class="hover:underline me-4 md:me-6">Детские сады</a>
               </li>
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">Школы</a>
+                  <a href="./school.html" class="hover:underline me-4 md:me-6">Школы</a>
               </li>
               <li>
-                <a href="#" class="hover:underline me-4 md:me-6">Университеты</a>
+                <a href="./university.html" class="hover:underline me-4 md:me-6">Университеты</a>
             </li>
               <li>
                   <a href="./news.html" class="hover:underline me-4 md:me-6">Новости</a>
@@ -131,8 +289,6 @@
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="" class="hover:underline">Eduway</a>. All Rights Reserved.</span>
   </div>
 </footer>
-
-</div>
 
 </body>
 </html>

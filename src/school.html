@@ -9,13 +9,30 @@
   <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
   <script src="../node_modules/leaflet/dist/leaflet.js"></script>
 </head>
-<body class="font-sans">
+
+<style>
+    @media (max-width: 640px) {
+        .menu {
+            display: none;
+        }
+    }
+</style>
+<body class="font-sans bg-gray-100">
   
-<div class="bg-gray-100">
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto my-0">
             <img src="../src/assets/logo.png" class="h-16 my-2" alt="Eduway Logo">
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button
+            data-drawer-target="drawer-right-example"
+            data-drawer-show="drawer-right-example"
+            data-drawer-placement="right"
+            aria-controls="drawer-right-example"
+            type="button"
+            class="text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-[#F7BE38]/50"
+          >
+            Контакт
+          </button>
             <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 17">
@@ -44,55 +61,136 @@
         </div>
         </div>
       </nav>
-<div class="mb-6">
-    <video class="w-full h-auto max-w-full" controls>
-      <source src="/docs/videos/flowbite.mp4" type="video/mp4">
+      <div
+      id="drawer-right-example"
+      class="fixed top-0 right-0 z-50 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300"
+      tabindex="-1"
+      aria-labelledby="drawer-right-label"
+    >
+      <div class="p-4">
+        <h2 id="drawer-right-label" class="text-xl font-semibold mb-4">
+          Свяжитесь с нами
+        </h2>
+
+        <form>
+          <label class="block mb-2 text-sm">Имя</label>
+          <input
+            type="text"
+            class="w-full p-2 border rounded-lg mb-4"
+            placeholder="Введите имя"
+            required
+          />
+
+          <label class="block mb-2 text-sm">Email</label>
+          <input
+            type="email"
+            class="w-full p-2 border rounded-lg mb-4"
+            placeholder="Введите email"
+            required
+          />
+
+          <label class="block mb-2 text-sm">Сообщение</label>
+          <textarea
+            class="w-full p-2 border rounded-lg mb-4"
+            placeholder="Введите сообщение"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg"
+          >
+            Отправить
+          </button>
+        </form>
+        <button
+          data-drawer-hide="drawer-right-example"
+          aria-controls="drawer-right-example"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+          <span class="sr-only">Close menu</span>
+        </button>
+      </div>
+    </div>
+<div class="relative w-full mb-6">
+    <div class="absolute inset-x-0 text-white p-4 z-10 w-full menu" style="margin-top: 80px;">
+        <nav>
+            <div class="max-w-screen-xl px-4 py-3 mx-auto">
+                    <ul class="flex gap-3 flex-row font-sans mt-0 text-sm">
+                     <li id="scroll-btn">
+                            <a href="#" class="text-white hover:underline hover:text-gray-300">О Школах</a>
+                        </li>
+                        <li id="scroll-btn2">
+                            <a href="#" class="text-white hover:underline">Отзывы</a>
+                        </li>
+                        <li id="scroll-btn3">
+                            <a href="#" class="text-white hover:underline">Школы на карте</a>
+                        </li>
+                        <li id="scroll-btn4">
+                            <a href="#" class="text-white hover:underline">Оставьте свой отзыв</a>
+                        </li>
+                    </ul>
+            </div>
+        </nav>
+        <h1 class="block font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl mt-10">Поиск школ в Eduway</h1>
+        <button id="scroll-to-map" type="submit" class="block w-auto mt-10 focus:outline-none text-white bg-[#f28c70] hover:bg-[#f28c90] focus:ring-4 font-medium rounded-full text-sm px-4 py-2.5">Выбрать школу</button>
+    </div>
+    <video class="w-full h-auto" autoplay loop muted>
+      <source src="./assets/schoolvideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     </div>
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-full mx-6  p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<div id="target-section" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-full mx-6  p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <div class="mb-6">
-        <img class="h-auto md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p>
+        <img class="h-auto md:w-full rounded-lg" src="../src/assets/school1.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Образование</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-md text-gray-500 text-center">В современном мире выбор образовательного учреждения — это важный шаг на пути к успешному будущему. Мы понимаем, что для каждого ребенка необходимо индивидуальное подход к учебному процесу, поэтому предлагаем вам воспользоваться нашим сервисом </p></div>
+    <div>
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/school2.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Индивидуальный подход к обучению</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Мы понимаем, что каждый ученик уникален. Поэтому в нашей школе осуществляется индивидуальный подход к каждому ребенку. Мы поддерживаем их успехи и помогают справляться с трудностями, создавая комфортную и поддерживающую атмосферу для обучения.
+        </p >
     </div>
     <div>
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight tracking-normal text-md text-gray-500 text-center">Start developing with an open-source library of over 450+ UI components.</p >       
-    </div>
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/school3.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Безопасная и дружелюбная среда </h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Мы создаем дружественную и безопасную атмосферу, где каждый ученик чувствует себя комфортно и защищенно. </p></div>
     <div>
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
-    </div>
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/school4.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Социальные проекты и волонтёрство</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Ученики нашей школы активно участвуют в социальных проектах и волонтерских инициативах. Это дает им возможность развивать чувство ответственности, эмпатию и понимание важности помощи другим.</p></div>
     <div>
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
-    </div>
-    <div>
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
-    </div>
-    <div>
-        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/child.jpg" alt="">
-        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Payments tool for companies</h2>
-        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Start developing with an open-source library of over 450+ UI components.</p>        
+        <img class="h-auto md:w-full max-w-full rounded-lg" src="../src/assets/school5.jpg" alt="">
+        <h2 class="text-xl mt-4 font-bold text-gray-700 text-center dark:text-white">Психологический климат</h2>
+        <p class="my-2 text-base/5 indent-8 tracking-tight text-gray-500 text-md text-center">Педагог-психолог работает со всеми ребятами, помогая им быстрее адаптироваться, решать конфликты и не допускать их в будущем.
+            Педагоги, которые уважают детей и их мнение, общаются на равных из позиции наставника, а не стража.</p>        
     </div>
 </div>
 
-<h2 class="text-4xl text-gray-700 my-6 text-center font-extrabold dark:text-white">Отзывы о школах Eduway</h2>
+<h2 id="target-section1" class="text-4xl text-gray-700 my-6 text-center font-extrabold dark:text-white">Отзывы о школах Eduway</h2>
 <div class="mx-6 grid grid-cols-1 gap-3 mb-6 md:grid-cols-3">
 <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <div class="flex flex-row mb-4">
-    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile4.png" alt="Rounded avatar">    
+    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Малика</h5>
 </div>    
-    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Мама Юли</br> Отзыв о школах Eduway</br> </p>
-        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать ...
+    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Мама Марьям учиница 3 класса</br> Отзыв о школах Eduway</br> </p>
+        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Отличная школа! Учителя внимательные, ребёнок с радостью ходит на занятия ...
     </p>
     <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
         Читать полностью
@@ -104,8 +202,8 @@
                 <!-- Modal header -->
                 <div class="flex items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600 border-gray-200">
                     <div class="flex flex-row">
-                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile4.png" alt="Rounded avatar">    
+                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Малика</h5>
                     </div> 
                     <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -117,16 +215,7 @@
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
                     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать.
-
-                        В ней очень добрые учителя и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
-                        
-                        Много хорошего написано про школу, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
-                        
-                        Ходим почти два года, все нравится. Спасибо коллективу школы!
+                        Отличная школа! Учителя внимательные, ребёнок с радостью ходит на занятия. Очень нравится, что есть дополнительные кружки по программированию и танцам.
                     </p>
                 </div>
             </div>
@@ -135,26 +224,26 @@
 </div>
 <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <div class="flex flex-row mb-4">
-    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile5.png" alt="Rounded avatar">    
+    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Фарзона</h5>
 </div>    
-    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Мама Юли</br> Отзыв о школах Eduway</br> </p>
-        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать ...
+    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Мама Абубакр ученик 2 класса</br> Отзыв о школах Eduway</br> </p>
+        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">  НОУ "Школа П. Пулатова" могу рекомендовать с уверенностью ...
     </p>
-    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+    <button data-modal-target="default-modal2" data-modal-toggle="default-modal2" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
         Читать полностью
       </button>
-      <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div id="default-modal2" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                 <!-- Modal header -->
                 <div class="flex items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600 border-gray-200">
                     <div class="flex flex-row">
-                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile5.png" alt="Rounded avatar">    
+                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Фарзона</h5>
                     </div> 
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal2">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
@@ -164,16 +253,13 @@
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
                     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать.
+                        НОУ "Школа П. Пулатова" могу рекомендовать с уверенностью.
 
-                        В ней очень добрые учителя и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
+                        Учителя и ассистенты здесь очень добрые и внимательные, отношение к детям не только заботливое, но и уважительное! К родителям также относятся с уважением. В школе практикуется индивидуальный подход к каждому ребенку — достаточно сообщить о ваших предпочтениях в питании, бытовых вопросах или подходе к обучению, и это будет учтено.
                         
-                        Много хорошего написано про школу, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
+                        Много положительных отзывов о школе, и я полностью с ними согласна. Лично для меня удобно, что если ребенок пропускает обед или ужин, можно попросить упаковать еду с собой! Это экономит мне много времени.
                         
-                        Ходим почти два года, все нравится. Спасибо коллективу школы!
+                        Мы ходим в эту школу почти два года, и нам все нравится. Спасибо коллективу школы!
                     </p>
                 </div>
             </div>
@@ -182,26 +268,26 @@
 </div>
 <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <div class="flex flex-row mb-4">
-    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+    <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile6.jpg" alt="Rounded avatar">    
+    <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Карима</h5>
     </div>    
-    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Мама Юли</br> Отзыв о школах Eduway</br> </p>
-        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать ...
+    <p class="mb-3 text-base/5 font-normal text-gray-400 dark:text-gray-400">Отзыв о школах Eduway</br> </p>
+        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Школа Гёте просто отличная. Учителя превосходные...
     </p>
-    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+    <button data-modal-target="default-modal3" data-modal-toggle="default-modal3" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
         Читать полностью
       </button>
-      <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div id="default-modal3" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                 <!-- Modal header -->
                 <div class="flex items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600 border-gray-200">
                     <div class="flex flex-row">
-                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile.png" alt="Rounded avatar">    
-                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Наталья</h5>
+                        <img class="w-15 h-15 rounded-full mr-3" src="./assets/profile6.jpg" alt="Rounded avatar">    
+                        <h5 class="text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">Карима</h5>
                     </div> 
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal3">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
@@ -211,17 +297,7 @@
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
                     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        Eduway — вообще хорошая сеть школ, и конкретно эту школу могу уверенно рекомендовать.
-
-                        В ней очень добрые учителя и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
-                        
-                        Много хорошего написано про школу, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
-                        
-                        Ходим почти два года, все нравится. Спасибо коллективу школы!
-                    </p>
+                        Школа Гёте просто отличная. Учителя превосходные. Учусь целых 11 лет. Была в Германии☺. В общем,советую всем,кто интересуется немецким языком. В ин.язе так не учат даже. Учителя немецкого самые лучшие во всей стране,но не только немецкого. Каждый учитель относится к ученикам,как к родным детям,честно. Моя гимназия,люблю тебя💟 …</p>
                 </div>
             </div>
         </div>
@@ -229,42 +305,37 @@
 </div>
 </div>
 
-<h2 class="text-4xl text-gray-700 my-6 text-center font-extrabold dark:text-white">Школы на карте</h2>
+<h2 id="target-section2" class="text-4xl text-gray-700 my-6 text-center font-extrabold dark:text-white">Школы на карте</h2>
 <div class="block relative mb-6 mt-10">
     <div id="map" class="h-[400px] w-full  z-0">
-        <div class="absolute max-w-105 h-auto p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-            <button id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom" class="me-3 mb-3 md:mb-0 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown bottom <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-                </button>
-        </div>     
+         
     </div>
 </div>
 
 <form id="myForm" class="bg-[#f28c70] max-w-full h-auto p-6">
-    <div class="max-w-full p-6  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <h2 class="text-xl font-bold text-gray-700 dark:text-white mb-2">Оставьте свой отзыв</h2>
-        <p class=" text-base/5 tracking-tight text-md text-gray-500 mb-4">Расскажите, что вы думаете о любом из садов Eduway, и мы обязательно постараемся стать лучше!</p>
+        <p class="text-base/5 tracking-tight text-md text-gray-500 mb-4">Расскажите, что вы думаете о любом из садов Eduway, и мы обязательно постараемся стать лучше!</p>
         <div class="mb-5 grid grid-cols-1 gap-3 md:grid-cols-3">
-            <input type="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Имя" required />
-            <input type="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Номер телефон" required />
-            <select id="schools" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                <option selected>Выбирите школу</option>
-                <option value="">Школа №1</option>
-                <option value="">Школа №2</option>
-                <option value="">Школа №3</option>
-                <option value="">Школа №4</option>
-              </select>
-        </div> 
-        <textarea id="message" rows="3" class="p-2.5 mb-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-    <div class="flex gap-2 items-center">
-    <button type="submit" class="w-sm focus:outline-none text-white bg-[#f28c70] hover:bg-[#f28c90] focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 me-4 mb-2">Оставить отзыв</button>
-    <input id="linkCheckbox" type="checkbox" value="" class="w-5 h-5 bg-gray-100 text-[#f28c70] border-gray-200 rounded-sm focus:ring-[#f28c70] dark:focus:ring-[#f28c70] dark:ring-offset-[#f28c70] focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-    <label for="linkCheckbox" class="ms-2 text-sm font-sm text-gray-600 dark:text-gray-300">Я даю свое согласие на обработку персональных данных. Я ознакомился и принимаю условия Политики конфиденциальности.</label>
-    </div>
-    <div id="successAlert" class="hidden mt-4 p-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50" role="alert">
-        ✅ <span class="font-medium">Success!</span> Your form has been submitted successfully.
-    </div>
+            <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Имя" required />
+            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Номер телефона" required />
+            <select id="kindergardens" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <option value="" selected>Выберите школу</option>
+                <option value="Школа 1">Школа №1</option>
+                <option value="Школа 2">Школа №2</option>
+                <option value="Школа 3">Школа №3</option>
+                <option value="Школа 4">Школа №4</option>
+            </select>
+        </div>
+        <textarea id="message" rows="3" class="p-2.5 mb-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Оставьте комментарий..." required></textarea>
+        <div class="flex gap-2 items-center">
+            <button type="submit" class="w-sm focus:outline-none text-white bg-[#f28c70] hover:bg-[#f28c90] focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 me-4 mb-2">Оставить отзыв</button>
+            <input id="linkCheckbox" type="checkbox" class="w-5 h-5 bg-gray-100 text-[#f28c70] border-gray-200 rounded-sm focus:ring-[#f28c70] dark:focus:ring-[#f28c70] dark:ring-offset-[#f28c70] focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
+            <label for="linkCheckbox" class="ms-2 text-sm font-sm text-gray-600 dark:text-gray-300">Я даю свое согласие на обработку персональных данных. Я ознакомился и принимаю условия Политики конфиденциальности.</label>
+        </div>
+        <div id="successAlert" class="hidden mt-4 p-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50" role="alert">
+            ✅ <span class="font-medium">Success!</span> Your form has been submitted successfully.
+        </div>
     </div>
 </form>
 <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900">
@@ -281,10 +352,10 @@
                     <a href="./school.html" class="hover:underline me-4 md:me-6">Школы</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Университеты</a>
+                    <a href="./university.html" class="hover:underline me-4 md:me-6">Университеты</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Новости</a>
+                    <a href="./news.html" class="hover:underline me-4 md:me-6">Новости</a>
                 </li>
                 <li>
                     <a href="./index.html" class="hover:underline">О Нас</a>
@@ -295,8 +366,62 @@
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="" class="hover:underline">Eduway</a>. All Rights Reserved.</span>
     </div>
   </footer>
+  <div id="modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="relative bg-white rounded-lg shadow w-full max-w-md">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-4">Оставить заявку</h2>
+        <form id="application-form">
+          <label class="block mb-2 text-sm">Имя родителя</label>
+          <input type="text" class="w-full p-2 border rounded-lg mb-4" placeholder="Введите ваше имя" required>
   
+          <label class="block mb-2 text-sm">Номер телефона</label>
+          <input type="tel" class="w-full p-2 border rounded-lg mb-4" placeholder="+998 XX XXX XX XX" required>
+  
+          <label class="block mb-2 text-sm">Возраст ребенка</label>
+          <input type="number" class="w-full p-2 border rounded-lg mb-4" placeholder="Возраст в годах" required>
+  
+          <label class="block mb-2 text-sm">Комментарий</label>
+          <textarea class="w-full p-2 border rounded-lg mb-4" placeholder="Дополнительная информация"></textarea>
+  
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg">Отправить заявку</button>
+        </form>
+        <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 text-2xl">&times;</button>
+      </div>
+    </div>
   </div>
+
+    <script>
+
+document.getElementById("scroll-btn").addEventListener("click", () => {
+    document.getElementById("target-section").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("scroll-btn2").addEventListener("click", () => {
+    document.getElementById("target-section1").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("scroll-btn3").addEventListener("click", () => {
+    document.getElementById("target-section2").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("scroll-btn4").addEventListener("click", () => {
+    document.getElementById("myForm").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("scroll-to-map").addEventListener("click", () => {
+    document.getElementById("target-section2").scrollIntoView({ behavior: "smooth" });
+});
+        const modal = document.getElementById('modal');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        closeBtn.onclick = function() {
+                modal.classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+                if (event.target == modal) {
+                        modal.classList.add('hidden');
+                }
+        }
+</script>
+  
   <script src="./locations.js"></script>
   <script>
     // Инициализация карты с центром на Ташкент (пример)
@@ -406,48 +531,58 @@
 
     for (const location of locations) {
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
 
-        L.marker([location.lat, location.lng]).addTo(map)
-            .bindPopup(location.render(), {
-            maxWidth: 300
+const marker = L.marker([location.lat, location.lng]).addTo(map)
+    .bindPopup(location.render(), {
+    maxWidth: 300
+});
+
+marker.on('click', function(e) {
+    // Handle marker click event here
+    console.log('Marker clicked:', location.name);
+    location.onClickApplication(() => {
+        handleApplicationClick(location);
+    });
+    // You can access location details through the location object
+});
+}
+
+    function handleApplicationClick(location) {
+        document.getElementById('modal').classList.remove('hidden');
+        document.getElementById('modal').querySelector('h3').innerText = location.name;
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('hidden');
         });
-    }
-
-
-    function handleApplicationClick() {
-        console.log('Application form clicked');
-
-        
         map.closePopup();
     }
 
     document.getElementById("myForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent page reload
+        event.preventDefault(); // Prevent page reload
 
-            // Get input values
-            const name = document.getElementById("name").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const schools = document.getElementById("schools").value.trim();
-            const message = document.getElementById("message").value.trim();
-            const successAlert = document.getElementById("successAlert");
+        // Get input values
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const kindergardens = document.getElementById("kindergardens").value;
+        const message = document.getElementById("message").value.trim();
+        const successAlert = document.getElementById("successAlert");
 
-            // Check if all fields are filled
-            if (name && phone && schools && message) {
-                successAlert.classList.remove("hidden"); // Show alert
+        // Check if all fields are filled
+        if (name && phone && kindergardens && message) {
+            successAlert.classList.remove("hidden"); // Show alert
 
-                document.getElementById("myForm").reset();
-                // Hide alert after 5 seconds
-                setTimeout(() => {
-                    successAlert.classList.add("hidden");
-                }, 5000);
-            } else {
-                alert("Please fill in all fields correctly!"); // Show error if fields are empty
-            }
-        });
-</script>
+            document.getElementById("myForm").reset();
+            // Hide alert after 5 seconds
+            setTimeout(() => {
+                successAlert.classList.add("hidden");
+            }, 5000);
+        } else {
+            alert("Please fill in all fields correctly!"); // Show error if fields are empty
+        }
+    });
+    </script>
   
   </body>
   </html>
