@@ -427,104 +427,112 @@ document.getElementById("scroll-to-map").addEventListener("click", () => {
     // Инициализация карты с центром на Ташкент (пример)
     const locations = [
         new Location({
-            photo: "./assets/idea.png",
-            name: 'Школа №1',
-            address: 'ул. Навои, 38А',
-            phone: '+998 90 123 45 67',
-            reviews: 150,
-            rating: 4.8,
-            lat: 40.2926,
-            lng: 69.6222
-        }),
-        new Location({
-            photo: "./assets/communication.png",
-            name: 'Школа №2',
-            address: 'ул. Навои, 38А',
-            phone: '+998 90 123 45 67',
-            reviews: 150,
-            rating: 4.8,
-            lat: 40.2826,
-            lng: 69.6222
-        }),
-        new Location({
-            photo: "./assets/education.png",
-            name: 'Школа №3',
-            address: 'ул. Амир Темур, 15',
-            phone: '+998 90 987 65 43',
-            reviews: 200,
-            rating: 4.9,
-            lat: 40.3126,
-            lng: 69.6322
-        }),
-        new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №4',
-            address: 'ул. Буюк Ипак Йули, 25',
-            phone: '+998 90 543 21 09',
-            reviews: 180,
+            photo: "./assets/litsey.jpg",
+            name: 'Лицей для одарённых учащихся в Худжанде',
+            address: '7HQP+H9C, Хуҷанд, Таджикистан',
+            phone: '+992 342224717',
+            reviews: 56,
             rating: 4.7,
-            lat: 40.3026,
-            lng: 69.6422
+            lat: 40.288960551065394,
+            lng: 69.58606360930006
         }),
         new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №5',
-            address: 'ул. Шота Руставели, 10',
-            phone: '+998 90 876 54 32',
-            reviews: 170,
-            rating: 4.6,
-            lat: 40.3126,
-            lng: 69.6522
-        }),
-        new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №6',
-            address: 'ул. Алишера Навои, 50',
-            phone: '+998 90 765 43 21',
-            reviews: 160,
+            photo: "./assets/chexov.jpg",
+            name: 'РТ ГБОУ "СОШ им А.П. Чехова"',
+            address: '7HJM+M3H, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 33,
             rating: 4.5,
-            lat: 40.3226,
-            lng: 69.6622
+            lat: 40.2817083002322,
+            lng: 69.58275702417166
+
         }),
         new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №7',
-            address: 'ул. Мустакиллик, 20',
-            phone: '+998 90 654 32 10',
-            reviews: 140,
-            rating: 4.4,
-            lat: 40.3326,
-            lng: 69.6722
+            photo: "./assets/pulotov.jpg",
+            name: 'НОУ "Школа П. Пулатова"',
+            address: '7JHH+3X6, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 23,
+            rating: 3.9,             
+            lat: 40.2776945094253,
+            lng: 69.62989956441879
         }),
         new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №8',
-            address: 'ул. Бобура, 30',
-            phone: '+998 90 543 21 98',
-            reviews: 130,
-            rating: 4.3,
-            lat: 40.3426,
-            lng: 69.6822
+            photo: "./assets/gimnaziya1.jpg",
+            name: 'Гимназия 1 имени Махмудходжа Бехбуди',
+            address: '7JPC+C5W, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 21,
+            rating: 4.5,
+            lat: 40.286137143893214,
+            lng: 69.6204513114718
+
         }),
         new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №9',
-            address: 'ул. Амира Темура, 45',
-            phone: '+998 90 432 10 87',
-            reviews: 120,
+            photo: "./assets/gimnaziya24.jpg",
+            name: 'Гимназия №24 имени Бободжона Гафурова.',
+            address: '7JX5+5XG, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 26,
+            rating: 4.5,
+            lat: 40.29795388257648,
+            lng: 69.60994986258544
+
+        }),
+        new Location({
+            photo: "./assets/irfon.jpg",
+            name: 'Мактаби Ирфон',
+            address: '8J4H+HWW, Хуҷанд, Таджикистан',
+            phone: '+992 555580678',
+            reviews: 40,
             rating: 4.2,
-            lat: 40.3526,
-            lng: 69.6922
+            lat:  40.30648718370323,
+            lng: 69.62984917320975
+
         }),
         new Location({
-            photo: "./assets/learning.png",
-            name: 'Школа №10',
-            address: 'ул. Шахрисабз, 60',
-            phone: '+998 90 321 09 76',
-            reviews: 110,
-            rating: 4.1,
-            lat: 40.3626,
-            lng: 69.7022
+            photo: "./assets/school28.jpg",
+            name: 'Средняя школа 28',
+            address: 'хиёбони Исмоили Сомони 168, Хуҷанд 735701, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 16,
+            rating: 4.5,
+            lat:  40.27467923881693,
+            lng:  69.63699779823634
+
+        }),
+        new Location({
+            photo: "./assets/kavsar.jpg",
+            name: 'Гимназия Кавсар',
+            address: '7JG6+6H5, Хуҷанд, Таджикистан',
+            phone: '+992 927177877',
+            reviews: 18,
+            rating: 4.2,
+            lat: 40.275534943823764,
+            lng: 69.61149177567961
+
+        }),
+        new Location({
+            photo: "./assets/paymon.jpg",
+            name: 'Паймони азизон',
+            address: '7JF6+VFV, улица Б Якубова, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 26,
+            rating: 4.2,
+            lat: 40.274420700043734,
+            lng: 69.61083032945606
+
+        }),
+        new Location({
+            photo: "./assets/gyte.jpg",
+            name: 'Частная школа «Гимназия им. И.В. Гёте»',
+            address: '7JG4+MXH, Хуҷанд, Таджикистан',
+            phone: '+992 927652323',
+            reviews: 45,
+            rating: 4.4,
+            lat: 40.276704202438495, 
+            lng: 69.60749231863318
+
         }),
     ];
     var map = L.map('map').setView([40.2926, 69.6222], 12);

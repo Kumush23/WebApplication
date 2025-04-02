@@ -208,42 +208,60 @@
     // Инициализация карты с центром на Ташкент (пример)
     const locations = [
         new Location({
-            name: 'Худжандский государственный университет',
-            address: 'ул. Исмоили Сомони 1, Худжанд',
-            phone: '+992 3422 6 00 00',
-            reviews: 150,
-            rating: 4.5,
-            lat: 40.2833,
-            lng: 69.6222
-        }),
-        new Location({
-            photo: './assets/politech.jpg',
+          website: 'https://web.ttu.tj/tj',
+          photo: "./assets/politech.jpg",
             name: 'Политехнический институт Таджикского технического университета',
-            address: 'ул. Ленина 226, Худжанд',
+            address: 'просп. Исмоили Сомони 226, Хуҷанд, Таджикистан',
+            phone: '+992 342260454',
+            reviews: 13,
+            rating: 3.5,
+            lat:  40.27225819882498, 
+            lng:  69.64114315440472
+
+        }),
+        new Location({
+            photo: './assets/hgu.jpg',
+            name: 'Худжандский государственный университет',
+            address: 'улица Гагарина, Хуҷанд, Таджикистан',
             phone: '+992 3422 6 00 01',
-            reviews: 120,
+            reviews: 358,
             rating: 4.3,
-            lat: 40.2828,
-            lng: 69.6225,
-            website: 'https://web.ttu.tj/tj'
+            lat: 40.304529548733214,
+            lng: 69.61623923276817,
+            website: 'http://hgu.tj/'
         }),
         new Location({
-            name: 'Худжандский медицинский колледж',
-            address: 'ул. Гагарина 15, Худжанд',
-            phone: '+992 3422 6 00 02',
-            reviews: 100,
-            rating: 4.2,
-            lat: 40.2840,
-            lng: 69.6230
+          photo: './assets/tgu.jpg',
+            name: 'Таджикский Государственный Университет Права, Бизнеса, и Политики',
+            address: '17 микрорайон, Хуҷанд, Таджикистан',
+            phone: '+992 342223811',
+            reviews: 435,
+            rating: 4.5,
+            lat: 40.30460402490758, 
+            lng: 69.61263772904756,
+            website: 'http://tsulbp.tj/glavnaya'
         }),
         new Location({
-            name: 'Худжандский государственный педагогический университет',
-            address: 'ул. Ленина 121, Худжанд',
-            phone: '+992 3422 6 00 03',
-            reviews: 130,
-            rating: 4.4,
-            lat: 40.2850,
-            lng: 69.6240
+          photo: './assets/gumanitarnixNauk.jpg',
+            name: 'Университет точных и гуманитарных наук',
+            address: '8M42+XVX, Хуҷанд, Таджикистан',
+            phone: '+992 xxx xx xx',
+            reviews: 6,
+            rating: 3.5,
+            lat: 40.307107547176166,
+            lng: 69.6530604069108
+        }),
+        new Location({
+          photo: './assets/tguk.jpg',
+            name: 'Донишкадаи иқтисод ва савдои Донишгоҳи давлатии тиҷорати Тоҷикистон (ДИС ДДТТ)',
+            address: 'Улица Ленина 169, Хуҷанд, Таджикистан',
+            phone: '+992 342260321',
+            reviews: 111,
+            rating: 4.5,
+            lat: 40.27355473580855,
+            lng: 69.64039041994334,
+            website: 'https://tguk.tj/index.php/ru/'
+
         }),
     ];
     var map = L.map('map').setView([40.2926, 69.6222], 12);
