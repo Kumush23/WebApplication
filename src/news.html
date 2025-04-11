@@ -8,6 +8,7 @@
   <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
+
 <body class="bg-gray-100">
   
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -125,24 +126,25 @@
     </div>
     
 
-<div id="btnContainer" class="mt-4 mb-1 flex justify-center rounded-lg shadow-xs" role="group">
-    <button onclick="filterSelection('all')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200  rounded-l-lg hover:bg-gray-100 focus:ring-2   focus:z-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+<div class="mt-4 mb-1 flex justify-center rounded-lg shadow-xs" role="group">
+    <button data-filter="all" type="button" class="filter-btn inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200  rounded-l-lg hover:bg-gray-100 focus:ring-2   focus:z-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
        все
       </button>
-    <button onclick="filterSelection('kindergardens')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button data-filter="kindergarden" type="button" class="filter-btn inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Детские сады
     </button>
-    <button onclick="filterSelection('schools')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button data-filter="school" type="button" class="filter-btn inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Школы
     </button>
-    <button onclick="filterSelection('universities')" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    <button data-filter="university" type="button" class="filter-btn inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
       Университеты
     </button>
 </div>
 <div class="mx-6 grid grid-cols-1 gap-3 mb-6 md:grid-cols-3">
-    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
-            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+    <div class="kindergarden p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news1.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
+              Занятие с логопедом "Прилетели птички" ...
         </p>
         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
             Читать полностью
@@ -162,38 +164,26 @@
                 </div>   
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
-                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                        </p>
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
-    
-                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
-                            
-                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
-                            
-                            Ходим почти два года, все нравится. Спасибо коллективу сада!
-                        </p>
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/news1.jpg" alt=""> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
-            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+    <div class="kindergarden p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news2.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Подготовка к школе ...
         </p>
-        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+        <button data-modal-target="default-modal1" data-modal-toggle="default-modal1" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
             Читать полностью
           </button>
-          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div id="default-modal1" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                     <!-- Modal header -->
                 <div class="flex">
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal1">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
@@ -202,38 +192,26 @@
                 </div>   
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
-                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                        </p>
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
-    
-                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
-                            
-                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
-                            
-                            Ходим почти два года, все нравится. Спасибо коллективу сада!
-                        </p>
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/news2.jpg" alt=""> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="max-w-105 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/child.jpg" alt="">    
-            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать ...
+    <div class="kindergarden p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news3.jpg" alt="">    
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Занятие по тхэквондо ...
         </p>
-        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+        <button data-modal-target="default-modal2" data-modal-toggle="default-modal2" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
             Читать полностью
           </button>
-          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div id="default-modal2" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                     <!-- Modal header -->
                 <div class="flex">
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal2">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
@@ -242,25 +220,241 @@
                 </div>   
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
-                        <img class="h-auto w-full rounded-lg" src="../src/assets/child.jpg" alt=""> 
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                        </p>
-                        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-                            Eduway — вообще хорошая сеть садиков, и конкретно этот сад могу уверенно рекомендовать.
-    
-                            В нем очень добрые воспитатели и ассистенты, отношение к детям не просто внимательное и заботливое, но и уважительное! К родителям, кстати, тоже. Есть индивидуальный подход к ребенку — достаточно сказать, что для вас важно в питании/бытовых воспросах/подходе — и это будет учтено.
-                            
-                            Много хорошего написано про сад, согласна со всеми положительными отзывами. Добавлю удобный лично для меня момент: если ребенок по какой-то причине пропускает обед или ужин, можно попросить упаковать еду с собой! Мне это экономит массу времени.
-                            
-                            Ходим почти два года, все нравится. Спасибо коллективу сада!
-                        </p>
+                        <img class="h-auto w-full rounded-lg" src="../src/assets/news3.jpg" alt=""> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
+    <div class="mx-6 grid grid-cols-1 gap-3 mb-6 md:grid-cols-3">
+      <div class="school p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news4.jpg" alt="">    
+              <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Почётный визит в школу имени А.П. Чехова! ...
+          </p>
+          <button data-modal-target="default-modal3" data-modal-toggle="default-modal3" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+              Читать полностью
+            </button>
+            <div id="default-modal3" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative p-4 w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                      <!-- Modal header -->
+                  <div class="flex">
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal3">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                          </svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>   
+                  <!-- Modal body -->
+                  <div class="p-4 md:p-5 space-y-4">
+                          <img class="h-auto w-full rounded-lg" src="../src/assets/news4.jpg" alt=""> 
+                          <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            Сегодня нашу школу посетил Чрезвычайный и Полномочный Посол Российской Федерации в Таджикистане Семён Вячеславович Григорьев. Его сопровождали генеральный консул России в Худжанде Сергей Васильевич Ланкин и руководитель Русского дома в Худжанде Татьяна Геннадьевна Мудрова.
+                          </p>
+                          <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                           В рамках визита Семён Вячеславович возложил цветы к памятнику великого русского писателя Антона Павловича Чехова, выразив уважение его вкладу в мировую литературу и культуру.
+                            
+                            Также он поздравил всех с прекрасным весенним праздником Навруз – символом обновления, добра и благополучия!
+                            
+                            Этот тёплый визит стал важным событием для нашей школы, подчеркивая крепкие российско-таджикские культурные и образовательные связи. 
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="school p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news5.jpg" alt="">    
+              <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Техническая апробация ОГЭ завершена успешно! ...
+          </p>
+          <button data-modal-target="default-modal4" data-modal-toggle="default-modal4" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+              Читать полностью
+            </button>
+            <div id="default-modal4" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative p-4 w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                      <!-- Modal header -->
+                  <div class="flex">
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal4">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                          </svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>   
+                  <!-- Modal body -->
+                  <div class="p-4 md:p-5 space-y-4">
+                          <img class="h-auto w-full rounded-lg" src="../src/assets/news5.jpg" alt=""> 
+                          <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            26 марта в пункте проведения экзамена (ППЭ) на базе российско-таджикской школы имени А.П. Чехова прошла техническая апробация по предметам:
+
+                            Русский язык
+                            Английский язык (устный)
+                            Информатика (КОГЭ)
+                            
+                            Цель апробации – проверка технологических и организационных процедур, которые будут использоваться во время основного государственного экзамена. В ходе тестирования были отработаны процессы:
+                            
+                            ✅ передача экзаменационных материалов по защищённой сети;
+                            ✅ печать полного комплекта экзаменационных материалов в аудиториях;
+                            ✅ сканирование и обработка бланков в штабе ППЭ.
+                            
+                            Учителя выступили в роли условных участников экзамена, имитируя выполнение заданий. Это позволило организаторам апробации детально отработать все этапы экзаменационного процесса.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="school p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news6.jpg" alt="">    
+              <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Международный турнир "Navruz Cup" стартовал! ...
+          </p>
+          <button data-modal-target="default-modal5" data-modal-toggle="default-modal5" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+              Читать полностью
+            </button>
+            <div id="default-modal5" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative p-4 w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                      <!-- Modal header -->
+                  <div class="flex">
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal5">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                          </svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>   
+                  <!-- Modal body -->
+                  <div class="p-4 md:p-5 space-y-4">
+                          <img class="h-auto w-full rounded-lg" src="../src/assets/news6.jpg" alt=""> 
+                          <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                            На футбольной площадке школы им. А.П. Чехова дан старт Международному турниру по футболу "Navruz Cup" в честь праздника Навруз! 
+                          </p>
+                          <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                  В соревнованиях принимают участие команды юных футболистов 2012-2013 г.р. из Кыргызстана, Узбекистана и Таджикистана.
+                            
+                            Первый игровой день подарил зрелищные матчи! 
+                            
+                            Первый матч:
+                            Кызыл-Кия (Кыргызстан) ???? Насаф (Узбекистан)
+                            Счёт: 3 - 6 в пользу Насафа!
+                            
+                            Борьба только начинается! Следите за нашими обновлениями, впереди ещё больше захватывающих матчей и эмоций! 
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+<div class="mx-6 grid grid-cols-1 gap-3 mb-6 md:grid-cols-3">
+  <div class="university p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news7.jpg" alt="">    
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Сотни абитуриентов из Таджикистана приняли участие в олимпиаде МГИМО...
+      </p>
+      <button data-modal-target="default-modal6" data-modal-toggle="default-modal6" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+          Читать полностью
+        </button>
+        <div id="default-modal6" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                  <!-- Modal header -->
+              <div class="flex">
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal6">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>   
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                      <img class="h-auto w-full rounded-lg" src="../src/assets/news7.jpg" alt=""> 
+                      <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                        Об этом сообщает представительство Россотрудничества в Таджикистане.
+                        Мероприятие проходит уже третий год подряд. Оно позволяет иностранным гражданам получить дипломатическое образование в столице России.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="university p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news8.jpg" alt="">    
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">ВСТРЕЧА С МОЛОДЕЖЬЮ НА ТЕМУ «МОЛОДЕЖЬ, ПОСЛАНИЕ ПРЕЗИДЕНТА И НАЦИОНАЛЬНЫЕ ИНТЕРЕСЫ»...
+      </p>
+      <button data-modal-target="default-modal7" data-modal-toggle="default-modal7" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+          Читать полностью
+        </button>
+        <div id="default-modal7" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                  <!-- Modal header -->
+              <div class="flex">
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal7">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>   
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                      <img class="h-auto w-full rounded-lg" src="../src/assets/news8.jpg" alt=""> 
+                      <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                        С целью разъяснения содержания Послания Президента Республики Таджикистан уважаемого Эмомали Рахмона Маджлиси Оли Республики Таджикистан о ключевых направлениях внутренней и внешней политики страны, привлечения молодежи к науке и образованию, повышения их политической и правовой культуры, укрепления самосознания и самоуважения, а также защиты национальных ценностей в зале Таджикского государственного университета права, бизнеса и политики состоялась полезная встреча со студентами университета.
+                      </p>
+                      <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+Во встрече приняли участие и выступили заместитель Председателя Комитета по делам молодежи и спорта при Правительстве Республики Таджикистан Шокирзода М., начальник Управления по делам молодежи и спорта города Худжанд Исматзода Б., а также руководитель отдела по делам молодежи и спорта города Худжанд Гафуров А..
+
+На встрече было отмечено, что Послание президента играет важную роль не только в обеспечении социально-экономического развития страны, но и в укреплении национального единства, безопасности и консолидации общества. Реализация основных направлений Послания главы государства возлагает на каждого гражданина страны новые политические и социальные обязанности, которые важны для устойчивого развития государства.
+
+В этой связи участников встречи призвали рационально использовать возможности, предоставленные государством и Правительством Республики Таджикистан, стремиться к овладению профессиями и современными знаниями, а также вносить достойный вклад в развитие и процветание Таджикистана.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="university p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <img class="h-auto mb-4 md:w-full rounded-lg" src="../src/assets/news9.jpg" alt="">    
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">ТГУПБП: Проведение международной научно-теоретической конференции на тему «Глобальные экологические проблемы: вода, ледники, изменение климата»...
+      </p>
+      <button data-modal-target="default-modal8" data-modal-toggle="default-modal8" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 rounded-full focus:ring-4 focus:outline-none dark:bg-[#F7BE38] dark:hover:bg-[#F7BE38]/90" type="button">
+          Читать полностью
+        </button>
+        <div id="default-modal8" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                  <!-- Modal header -->
+              <div class="flex">
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal8">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>   
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                      <img class="h-auto w-full rounded-lg" src="../src/assets/news9.jpg" alt=""> 
+                      <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
+                        В Таджикском государственном университете права, бизнеса и политики 05 марта 2025 года состоялась научно-теоретическая конференция на тему «Глобальные экологические проблемы: вода, ледники, изменение климата», посвящённая объявлению 2025 года «Международным годом защиты ледников» и Международному десятилетию действий «Вода для устойчивого развития, 2018–2028 годы». В работе конференции приняли участие эксперты, учёные-исследователи, специалисты отрасли, сотрудники научных и образовательных учреждений Республики Таджикистан и зарубежных стран.
+Пленарное заседание конференции открыл ректор университета, доктор экономических наук Хомид Хошимзода, который представил гостей. Затем он отметил, что изменение климата является одной из важнейших проблем всех стран мира, и что в Таджикистане под непосредственным руководством Лидера нации, уважаемого Эмомали Рахмона, приняты и реализуются ряд внутренних и международных нормативно-правовых актов, а также концепции и программы глобального значения, такие как: Закон Республики Таджикистан «О защите ледников», «Стратегия развития „зелёной“ экономики в Республике Таджикистан на 2023–2037 годы», «Национальная стратегия адаптации к изменению климата Республики Таджикистан на период до 2030 года», «Государственная программа изучения и защиты ледников Таджикистана на 2010–2030 годы», «Государственная комплексная программа развития экологического воспитания и просвещения населения Республики Таджикистан на 2021–2025 годы» и международные документы. </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 mt-4">
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
@@ -289,6 +483,23 @@
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="" class="hover:underline">Eduway</a>. All Rights Reserved.</span>
   </div>
 </footer>
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+const images = document.querySelectorAll('.grid > div');
 
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        images.forEach(img => {
+            if (filter === 'all' || img.classList.contains(filter)) {
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
 </body>
 </html>
